@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete Webpage Layout</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #111;
+      color: white;
+    }
+
+    .left-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 40px;
+      filter: invert(1);
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .social-links a img {
+      width: 24px;
+      height: 24px;
+      filter: invert(1);
+      margin-left: 10px;
+    }
+
+    nav.sidebar {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 200px;
+      height: calc(100% - 70px);
+      background-color: #333;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav.sidebar a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .page-wrapper {
+      margin-left: 200px;
+      padding: 20px;
+      flex: 1;
+    }
+
+    .about_h {
+      margin-bottom: 20px;
+    }
+
+    .land {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      padding: 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      nav.sidebar {
+        display: none;
+      }
+
+      .page-wrapper {
+        margin-left: 0;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left-section">
+      <div class="logo-container">
+        <img src="nike_swoosh.png" alt="nike" class="logo">
+        <div class="logo-text">MayJary</div>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/company/hashedbit-innovations/posts/?feedView=all"><img class="logo_" src="linkedin.png" alt="linkedin"></a>
+      <a href="https://www.youtube.com/@HashedBit"><img class="logo_" src="youtube.png" alt="youtube"></a>
+      <a href="https://www.instagram.com/hashedbit/"><img class="logo_" src="instagram.png" alt="Instagram"></a>
+    </div>
+  </header>
+
+  <nav class="sidebar">
+    <a href="#">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <hr style="margin: 15px 0;">
+    <p style="color: white; font-size: 14px;">HTML and CSS</p>
+        <p style="color: white; font-size: 14px;">Latest Updates<p>
+
+  </nav>
+
+  <div class="page-wrapper">
+    <h1 class="about_h">Solitary Cottage on a Frosty Morning</h1>
+    <img class="land" src="image.png" alt="landscape">
+    <p class="description">
+      Nestled at the edge of a sprawling, frost-kissed field, this small, weathered cottage stands in quiet solitude...
+    </p>
+
+  <footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>Email: support@mysite.com</p>
+        <p>Phone: +91 12345 67890</p>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 MySite. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>
