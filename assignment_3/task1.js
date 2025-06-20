@@ -33,14 +33,14 @@ for (let char of str.toLowerCase()) {
   }
 
 
-console.log("Vowels:", vowels);
+console.log("\nVowels:", vowels);
 console.log("Consonants:", consonants);
 
 // Q5) Write a function to replace wrong word with correct word in any sentence.
 function correctfn(string, wrong, correct) {
   return string.replace(wrong, correct);
 }
-console.log(correctfn("I lve football", "lve", "love"));
+console.log(correctfn("\nI lve football", "lve", "love"));
 
 // Q6) inputArr = [1,2,3,9,10,7,5,4,3] answer = [9, 10, 7] Use array.filter and return numbers greater than 5.
 let inputArr = [1,2,3,9,10,7,5,4,3];
