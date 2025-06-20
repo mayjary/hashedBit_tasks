@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>Complete Webpage Layout</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     * {
       margin: 0;
@@ -23,12 +22,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
+      padding:  20px;
       background-color: #111;
       color: white;
       position: fixed;
       width: 100%;
       z-index: 1000;
+      
     }
 
     .left-section {
@@ -92,20 +92,49 @@
       flex: 1;
     }
 
-    .about_h {
-      margin-bottom: 20px;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
 
-    .pad {
-      font-size: 16px;
-      line-height: 1.6;
+    .card {
+      background: #f4f4f4;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h2 {
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     footer {
       background-color: #111;
       color: white;
       padding: 20px;
-      margin-top: 290px;
+      margin-top: auto;
+      margin-left: 200px;
     }
 
     .footer-content {
@@ -143,20 +172,20 @@
   <header>
     <div class="left-section">
       <div class="logo-container">
-        <img src="nike_swoosh.png" alt="nike" class="logo" />
+        <img src="nike_swoosh.png" alt="nike" class="logo">
         <div class="logo-text">MayJary</div>
       </div>
       <div class="menu-links">
-        <a href="index.html">Home</a>
+        <a href="#">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
       </div>
     </div>
 
     <div class="social-links">
-      <a href="https://www.linkedin.com/company/hashedbit-innovations/posts/?feedView=all"><img src="linkedin.png" alt="linkedin" /></a>
-      <a href="https://www.youtube.com/@HashedBit"><img src="youtube.png" alt="youtube" /></a>
-      <a href="https://www.instagram.com/hashedbit/"><img src="instagram.png" alt="Instagram" /></a>
+      <a href="https://www.linkedin.com/company/hashedbit-innovations/posts/?feedView=all"><img src="linkedin.png" alt="linkedin"></a>
+      <a href="https://www.youtube.com/@HashedBit"><img src="youtube.png" alt="youtube"></a>
+      <a href="https://www.instagram.com/hashedbit/"><img src="instagram.png" alt="Instagram"></a>
     </div>
   </header>
 
@@ -164,32 +193,49 @@
     <a href="#">Latest Blog</a>
     <a href="#">New Updates</a>
     <a href="#">Landscapes</a>
-    <hr style="margin: 15px 0;" />
+    <hr style="margin: 15px 0;">
     <p style="color: white; font-size: 14px;">HTML and CSS</p>
     <p style="color: white; font-size: 14px;">More Cool Stuff</p>
   </nav>
 
   <div class="page-wrapper">
-    <h1 class="about_h">About</h1>
-    <p class="pad">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti corrupti, autem minima saepe eum reprehenderit molestiae dolorum nam, commodi quod laborum perspiciatis non. Dolores suscipit minima, aut praesentium sunt ullam.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ipsum dolore in earum commodi accusamus ullam voluptatem iure labore! A voluptatibus, rerum facere velit voluptates porro ipsam architecto placeat pariatur.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa impedit, atque autem odit omnis dolor et illum cupiditate ex obcaecati suscipit dignissimos, necessitatibus aliquam eius quod temporibus adipisci delectus facere.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae laborum quidem aliquam quas eaque, nisi facere assumenda fuga nemo amet, soluta placeat magni recusandae! Impedit cumque debitis eligendi non praesentium!
-    </p>
-
-    <footer>
-      <div class="footer-content">
-        <div class="contact-info">
-          <h3>Contact Us</h3>
-          <p>Email: support@mayjary.com</p>
-          <p>Phone: +91 ***** *****</p>
-        </div>
-        <div class="copyright">
-          <p>&copy; 2025 MayJary. All rights reserved.</p>
+    <div class="gallery">
+      <div class="card">
+        <img src="image1.jpg" alt="Landscape 1">
+        <div class="card-content">
+          <h2>Frosty Sunrise</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel venenatis lorem.</p>
         </div>
       </div>
-    </footer>
+      <div class="card">
+        <img src="image2.jpg" alt="Landscape 2">
+        <div class="card-content">
+          <h2>Misty Mountains</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan nisi vel augue pretium.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="image3.jpg" alt="Landscape 3">
+        <div class="card-content">
+          <h2>Quiet Forest</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus purus vitae velit laoreet.</p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>Email: support@mayjary.com</p>
+        <p>Phone: +91 90909 09090</p>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 MayJary. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class='text-here' id='text-container'>This is some example text</div>
+
+  <input type="text" id="colorbox">
+  <button id="colorchange">Change Colour</button>
+
+  <br><br>
+
+  <input type="range" id="fontsize" min="10" max="100" value="55">
+  <br><br>
+
+  <button id="italic" class="stylebt">Italics</button>
+  <button id="underline" class="stylebt">Underline</button>
+  <button id="bold" class="stylebt">Bold</button>
+
+  <br><br>
+
+  <select id="list">
+    <option value="serif">Serif</option>
+    <option value="sans-serif">Sans-Serif</option>
+    <option value="monospace">Monospace</option>
+    <option value="cursive">Cursive</option>
+    <option value="fantasy">Fantasy</option>
+  </select>
+
+  <br><br>
+
+  <button id="getstyle">Get CSS</button>
+
+  <br><br>
+  <p id="css-props"></p>
+
+  <script>
+    const text = document.getElementById("text-container");
+
+    document.getElementById("colorchange").onclick = function () {
+      const color = document.getElementById("colorbox").value;
+      text.style.color = color;
+    };
+
+    document.getElementById("fontsize").oninput = function () {
+      const size = document.getElementById("fontsize").value;
+      text.style.fontSize = size + "px";
+    };
+
+    document.getElementById("italic").onclick = function () {
+      text.style.fontStyle = text.style.fontStyle === "italic" ? "normal" : "italic";
+    };
+
+    document.getElementById("underline").onclick = function () {
+      text.style.textDecoration = text.style.textDecoration === "underline" ? "none" : "underline";
+    };
+
+    document.getElementById("bold").onclick = function () {
+      text.style.fontWeight = text.style.fontWeight === "bold" ? "normal" : "bold";
+    };
+
+    document.getElementById("list").onchange = function () {
+      const font = document.getElementById("list").value;
+      text.style.fontFamily = font;
+    };
+
+    document.getElementById("getstyle").onclick = function () {
+      const styles = window.getComputedStyle(text);
+      const colorName = text.style.color || styles.color;
+      const fontSize = styles.fontSize;
+      const fontWeight = styles.fontWeight === "700" ? "bold" : styles.fontWeight;
+      const fontStyle = styles.fontStyle;
+      const textDecoration = styles.textDecoration.includes("underline") ? "underline" : "none";
+      const fontFamily = styles.fontFamily.split(",")[0];
+
+      document.getElementById("css-props").textContent =
+        `color: ${colorName}; ` +
+        `font-size: ${fontSize}; ` +
+        `font-family: ${fontFamily}; ` +
+        `font-style: ${fontStyle}; ` +
+        `font-weight: ${fontWeight}; ` +
+        `text-decoration: ${textDecoration};`;
+    };
+  </script>
+</body>
+</html>
